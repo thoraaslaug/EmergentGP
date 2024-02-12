@@ -8,6 +8,8 @@ TagManager:
   - Box
   - ColorChange
   - TrailPoint
+  - Trail
+  - Trail2
   layers:
   - Default
   - TransparentFX
