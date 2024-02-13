@@ -6,10 +6,10 @@ TagManager:
   tags:
   - KillZone
   - Box
-  - ColorChange
   - TrailPoint
-  - Trail
   - Trail2
+  - Birds
+  - Trail1
   layers:
   - Default
   - TransparentFX

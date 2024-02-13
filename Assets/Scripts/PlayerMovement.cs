@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /* void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Trail"))
+        if (other.gameObject.CompareTag("Trail1"))
         {
             // Freeze the character
             Debug.Log("Collided with trail");
@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
             // Stop character movement here
         }
     }
+    */
 
     void FixedUpdate()
     {

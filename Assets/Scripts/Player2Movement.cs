@@ -40,7 +40,7 @@ public class Player2Movement : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /* void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Trail2"))
         {
@@ -51,6 +51,7 @@ public class Player2Movement : MonoBehaviour
             // Stop character movement here 
         }
     }
+    */
 
     void FixedUpdate()
     {
