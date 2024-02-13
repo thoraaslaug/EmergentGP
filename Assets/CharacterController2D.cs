@@ -24,6 +24,8 @@ public class CharacterController2D : MonoBehaviour
 	public TrailRenderer tr;
 	public AudioSource clip;
 	public AudioClip sound;
+	public int lives = 3; // Number of lives for the character
+
 	[Header("Events")]
 	[Space]
 
@@ -74,8 +76,32 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 	}
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player")) // Assuming the other character's tag is "Player"
+		{
+			// Reduce lives for both characters
+			lives--;
+			collision.gameObject.GetComponent<CharacterController2D>().lives--;
+
+			// Check if lives reach zero for either character
+			if (lives <= 0)
+			{
+				// Respawn the character
+				Respawn();
+			}
+
+			if (collision.gameObject.GetComponent<CharacterController2D>().lives <= 0)
+			{
+				// Respawn the other character
+				collision.gameObject.GetComponent<CharacterController2D>().Respawn();
+			}
+		}
+	}
+
 	
 	public void Respawn(){
+		lives = 3;
 		gameObject.transform.position = respawnPosition.transform.position;
 		m_Grounded = true;
 		tr.Clear();

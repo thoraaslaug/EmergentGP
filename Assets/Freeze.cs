@@ -19,7 +19,6 @@ public class Freeze : MonoBehaviour
         SetColliderPointsFromTrail(myTrail, myCollider);
     }
     
-    //Gets from unused pool or creates one if none in pool
     EdgeCollider2D GetValidCollider()
     {
         EdgeCollider2D validCollider;
@@ -39,7 +38,6 @@ public class Freeze : MonoBehaviour
     void SetColliderPointsFromTrail(TrailRenderer trail, EdgeCollider2D collider)
     {
         List<Vector2> points = new List<Vector2>();
-        //avoid having default points at (-.5,0),(.5,0)
         if(trail.positionCount == 0)
         {
             points.Add(transform.position);
@@ -47,7 +45,6 @@ public class Freeze : MonoBehaviour
         }
         else for(int position = 0; position<trail.positionCount; position++)
         {
-            //ignores z axis when translating vector3 to vector2
             points.Add(trail.GetPosition(position));
         }
         collider.SetPoints(points);
